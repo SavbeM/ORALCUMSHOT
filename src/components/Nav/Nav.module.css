@@ -1,0 +1,17 @@
+.nav {
+    grid-area: n;
+    background-color: darkslategrey;
+}
+.item {
+    margin: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: azure;
+    text-decoration: none;
+    transition: 0.2s linear;
+}
+
+.item:hover {
+    color: darkgrey;
+    text-decoration: underline darkgrey;
+}
