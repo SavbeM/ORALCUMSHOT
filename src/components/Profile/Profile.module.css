@@ -31,36 +31,3 @@
     font-size: 30px;
     font-weight: bold;
 }
-
-.postContainer {
-    display: flex;
-    flex-direction: column;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 50px;
-}
-
-
-.send {
-    background-color: greenyellow;
-    font-weight: bold;
-    height: 50px;
-    width: 100px;
-    transition: 0.2s linear;
-    border: 2px solid green;
-    border-radius: 4px;
-}
-
-.send:hover {
-    background-color: green;
-    color: aliceblue;
-}
-
-.input {
-    width: 300px;
-    height: 50px;
-}
-.item {
-    font-weight: bold;
-}
-
