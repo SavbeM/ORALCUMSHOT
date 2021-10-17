@@ -4,28 +4,26 @@ import classes from "./MyPosts.module.css";
 
 
 
+export const MyPosts = (props) => {
 
-const MyPosts = (props) => {
-    let newPostElement = React.createRef()
+    let ProfilePosts = props.profilePage.posts.map((p) => <div>{p.post}</div>)
+
     let addPost = () => {
-        let post = newPostElement.current.value
-        props.dispatch({type: 'ADD-POST', post: post})
+        props.addPost(props.profilePage.postText)
     }
-    let ProfilePosts = props.posts.map((p) => <div>{p.post}</div>)
 
-
-        return (<div className={classes.postContainer}>
+    return (<div className={classes.postContainer}>
             <div className={classes.title}>
                 My post
             </div>
             <div className={classes.myPostInput}>
-                <input ref={newPostElement}  className={classes.input}></input>
+                <input value={props.profilePage.postText} onChange={(val) => props.addPostText(val.target.value)}
+                       className={classes.input}></input>
                 <button onClick={addPost} className={classes.send}>SEND</button>
             </div>
-                {ProfilePosts}
-
+            {ProfilePosts}
         </div>
 
     )
+
 }
-export default MyPosts

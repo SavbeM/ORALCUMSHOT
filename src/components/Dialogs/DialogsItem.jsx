@@ -3,7 +3,7 @@ import classes from "./DialogsItem.module.css";
 import {NavLink} from "react-router-dom";
 
 
-const Dialogs = (props) => {
+export const DialogsItem = (props) => {
 
 
     return (<div className={classes.content}>
@@ -17,4 +17,3 @@ const Dialogs = (props) => {
 
     )
 }
-export default Dialogs

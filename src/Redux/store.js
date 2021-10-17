@@ -1,6 +1,11 @@
 import React from "react";
-import {observe} from "web-vitals/dist/modules/lib/observe";
+import {profilePostReducer} from "./profile-post-reducer";
+import {messagesDialogsReducer} from "./messages-dialogs-reducer";
 
+
+let subscriber = (observer) => {
+
+}
 
 const store =
     {
@@ -8,10 +13,13 @@ const store =
             dialogsPage: {
                 dialogs: [{message: 'ababa', name: 'Ignat', id: 1}, {message: 'abobob', name: 'Goga', id: 2},
                     {message: 'abububu', name: 'Irakli', id: 3}],
+                dialogsText: []
             },
 
             profilePage: {
-                posts: [{post: 'post message'}, {post: 'gnida'},]
+                posts: [{post: 'post message'}, {post: 'gnida'},],
+                postText: []
+
             },
         },
         subscriber(observer) {
@@ -23,17 +31,9 @@ const store =
         getState(){return this.__state},
 
         dispatch(action) {
-
-            if (action.type === 'ADD-POST') {
-                let newPost = {
-                    post: action.post,
-                }
-                this.__state.profilePage.posts.push(newPost)
-                this.__callSubscriber()
-
-
-            }
-
+            this.__state.profilePage.posts = profilePostReducer(this.__state.profilePage.posts, action)
+            this.__state.dialogsPage.dialogs = messagesDialogsReducer(this.__state.dialogsPage.dialogs, action)
+            this.__callSubscriber()
         }
     }
 
