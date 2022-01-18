@@ -1,6 +1,7 @@
 .nav {
     grid-area: n;
     background-color: darkslategrey;
+    min-height: 720px;
 }
 .item {
     margin: 20px;

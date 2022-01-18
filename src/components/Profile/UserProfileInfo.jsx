@@ -1,8 +1,11 @@
 import classes from "./Profile.module.css";
 import React from "react";
+import avatar from "../../assets/avatar.png"
+import {Status} from "./Status";
 
 
-const UserProfileInfo = () => {
+const UserProfileInfo = (props) => {
+
    return(<div className={classes.content}>
            <div className={classes.upp}>
                <img
@@ -10,16 +13,15 @@ const UserProfileInfo = () => {
            </div>
     <div className={classes.info}>
         <div className={classes.ava}>
-            <img src="https://uybor.uz/borless/uybor/img/user-images/user_no_photo_600x600.png"></img>
+            {(!props.profile.photos.large) ? <img src={avatar}/> : <img src={props.profile.photos.large} alt=""/>}
         </div>
         <div className={classes.textInfo}>
             <div className={classes.title}>
-                Mark Selikhov
+                {props.profile.fullName }
             </div>
+
             <div className={classes.subtitle}>
-                <p>Age</p>
-                <p>Country</p>
-                <p>Number</p>
+                <Status setStatusThunk={props.setStatusThunk} status={props.status} loggId={props.logginedId} id={props.profile.userId}/>
             </div>
         </div>
     </div>

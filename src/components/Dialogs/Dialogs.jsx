@@ -3,9 +3,10 @@ import classes from "./Dialogs.module.css";
 import {DialogsItem} from "./DialogsItem";
 
 
+
 const Dialogs = (props) => {
 
-    let state = props.dialogsPage
+
     const messages = props.dialogsPage.dialogs.map((e)=> <DialogsItem message={e.message} name={e.name} id={e.id}/>)
 
 

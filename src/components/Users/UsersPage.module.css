@@ -1,0 +1,81 @@
+.pagination {
+    width: 500px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.users {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 600px;
+
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px;
+    border: 1px solid darkslateblue;
+}
+
+.followUsers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 40px;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ava img {
+    max-height: 150px;
+    margin: 0 auto;
+
+}
+
+.ava {
+    min-width: 100px;
+}
+
+.follow {
+    margin: 0 auto;
+}
+
+.userInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.init {
+    margin-right: 30px;
+    width: 150px;
+}
+
+.followed {
+    background-color: darkslategray;
+    color: aliceblue;
+    transition: linear 0.2s;
+}
+
+.followed:hover {
+    background-color: darkgray;
+}
+
+.unfollowed {
+    background-color: aliceblue;
+    color: darkslategray;
+    transition: linear 0.2s;
+}
+
+.unfollowed:hover {
+    background-color: darkgray;
+}

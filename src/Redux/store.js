@@ -3,10 +3,6 @@ import {profilePostReducer} from "./profile-post-reducer";
 import {messagesDialogsReducer} from "./messages-dialogs-reducer";
 
 
-let subscriber = (observer) => {
-
-}
-
 const store =
     {
         __state: {

@@ -1,16 +1,16 @@
 import React from 'react';
-import classes from "./Profile.module.css";
 import UserProfileInfo from "./UserProfileInfo";
 import {MyPostContainer} from "../Posts/MyPostContainer";
+import preloader from  "../../assets/preloader.gif"
 
 
 
-const Profile = () => {
+export const Profile = (props) => {
+
     return (
         <div>
-                <UserProfileInfo/>
-                <MyPostContainer />
+            {(!props.profile) ? <img src={preloader}/> : <UserProfileInfo setStatusThunk={props.setStatusThunk} status={props.status} logginedId={props.logginedId} profile={props.profile}/>}
+            <MyPostContainer/>
         </div>
     );
 }
-export default Profile
